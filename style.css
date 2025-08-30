@@ -1,0 +1,354 @@
+
+    /* Reset */
+    * {margin:0; padding:0; box-sizing:border-box;}
+
+    :root {
+      --primary: #00e0ff;
+      --secondary: #ffb347;
+      --accent: #ff4e7d;
+      --dark: #0f0c29;
+      --darker: #090717;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, var(--darker), var(--dark));
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      overflow: hidden;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+      position: relative;
+      padding: 15px;
+    }
+
+    .container {
+      max-width: 800px;
+      width: 100%;
+      z-index: 10;
+      text-align: center;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      margin-bottom: 20px;
+      animation: fadeIn 2s ease-in-out;
+      text-shadow: 0 0 15px rgba(0, 224, 255, 0.5);
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-weight: 700;
+      line-height: 1.2;
+      padding: 0 10px;
+    }
+
+    .countdown {
+      display: flex;
+      gap: clamp(8px, 3vw, 20px);
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .time-box {
+      background: rgba(255,255,255,0.08);
+      padding: clamp(15px, 4vw, 25px) clamp(8px, 2vw, 15px);
+      border-radius: 16px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      min-width: clamp(70px, 20vw, 100px);
+      animation: glow 2s infinite alternate;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      flex: 1;
+      max-width: clamp(80px, 22vw, 120px);
+    }
+
+    .time-box:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 0 25px var(--primary);
+    }
+
+    .time-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+    }
+
+    .time-box span {
+      display: block;
+    }
+
+    .time {
+      font-size: clamp(1.8rem, 6vw, 2.5rem);
+      font-weight: bold;
+      color: var(--primary);
+      text-shadow: 0 0 10px rgba(0, 224, 255, 0.6);
+      margin-bottom: 5px;
+    }
+
+    .label {
+      font-size: clamp(0.7rem, 2.5vw, 0.9rem);
+      opacity: 0.9;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 600;
+    }
+
+    /* Floating notification */
+    .floating-text {
+      position: relative;
+      font-size: clamp(1rem, 3.5vw, 1.3rem);
+      font-weight: 600;
+      color: var(--secondary);
+      animation: float 4s ease-in-out infinite;
+      text-align: center;
+      padding: clamp(12px, 3vw, 18px) clamp(20px, 5vw, 30px);
+      background: rgba(255, 179, 71, 0.1);
+      border-radius: 50px;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 179, 71, 0.2);
+      margin-bottom: 30px;
+      display: inline-block;
+      max-width: 95%;
+    }
+
+    .floating-text i {
+      margin-right: clamp(8px, 2vw, 12px);
+      animation: ring 2s infinite;
+    }
+
+    /* Progress bar */
+    .progress-container {
+      width: 100%;
+      max-width: min(550px, 90vw);
+      height: 10px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      margin: 30px auto;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 10px;
+      transition: width 1s ease;
+    }
+
+    /* Interactive buttons */
+    .actions {
+      display: flex;
+      gap: clamp(10px, 3vw, 20px);
+      justify-content: center;
+      margin-top: 25px;
+      flex-wrap: wrap;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .btn {
+      padding: clamp(12px, 3vw, 15px) clamp(20px, 4vw, 30px);
+      border-radius: 50px;
+      border: none;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255,255,255,0.1);
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      min-width: 160px;
+      max-width: 220px;
+    }
+
+    .btn:hover {
+      background: linear-gradient(45deg, var(--primary), var(--accent));
+      transform: translateY(-3px);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn i {
+      margin-right: clamp(8px, 2vw, 10px);
+    }
+
+    /* Celebration animation */
+    .confetti {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: var(--primary);
+      opacity: 0;
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    }
+
+    /* Moving text in background */
+    .moving-text {
+      position: absolute;
+      color: rgba(255,255,255,0.04);
+      font-size: clamp(2rem, 10vw, 5.5rem);
+      font-weight: 900;
+      z-index: 1;
+      user-select: none;
+      white-space: nowrap;
+      animation: moveText 25s linear infinite;
+      text-transform: uppercase;
+    }
+
+    /* Animations */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    @keyframes ring {
+      0%, 100% { transform: rotate(0); }
+      25% { transform: rotate(15deg); }
+      75% { transform: rotate(-15deg); }
+    }
+
+    @keyframes glow {
+      0% { box-shadow: 0 0 10px var(--primary); }
+      100% { box-shadow: 0 0 25px var(--primary), 0 0 50px rgba(0, 224, 255, 0.3); }
+    }
+
+    @keyframes fadeIn {
+      from {opacity:0; transform: translateY(20px);}
+      to {opacity:1; transform: translateY(0);}
+    }
+
+    @keyframes moveText {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100vw); }
+    }
+    
+    @keyframes fall {
+      to { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* Floating background elements */
+    .floating-element {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.03);
+      animation: floatElement 20s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes floatElement {
+      0% { transform: translateY(0) rotate(0) scale(1); }
+      50% { transform: translateY(-80px) rotate(180deg) scale(1.2); }
+      100% { transform: translateY(0) rotate(360deg) scale(1); }
+    }
+
+    /* Preloader styles */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--darker);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
+    }
+
+    .preloader-content {
+      text-align: center;
+    }
+
+    .preloader-text {
+      font-size: clamp(2rem, 8vw, 3rem);
+      font-weight: bold;
+      color: var(--primary);
+      animation: fadeZoom 2s infinite ease-in-out;
+      letter-spacing: 4px;
+      text-shadow: 0 0 20px rgba(0, 224, 255, 0.6);
+      margin-bottom: 15px;
+    }
+
+    .preloader-subtext {
+      font-size: clamp(1rem, 3.5vw, 1.3rem);
+      font-weight: 500;
+      color: var(--secondary);
+      animation: fadeIn 2s ease-in-out infinite alternate;
+      text-shadow: 0 0 10px rgba(255, 179, 71, 0.5);
+    }
+
+    /* Preloader Animation */
+    @keyframes fadeZoom {
+      0% { opacity: 0; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1.2); }
+      100% { opacity: 0; transform: scale(0.9); }
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 30px;
+      font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+      opacity: 0.7;
+      text-align: center;
+      max-width: min(500px, 90vw);
+      line-height: 1.5;
+      padding: 0 15px;
+    }
+
+    /* Responsive adjustments for very small screens */
+    @media (max-width: 350px) {
+      .countdown {
+        gap: 5px;
+      }
+      
+      .time-box {
+        min-width: 60px;
+        padding: 12px 5px;
+      }
+      
+      .time {
+        font-size: 1.5rem;
+      }
+      
+      .label {
+        font-size: 0.6rem;
+        letter-spacing: 0.5px;
+      }
+      
+      .btn {
+        min-width: 140px;
+        padding: 10px 15px;
+      }
+    }
+
+    /* Prevent horizontal scrolling */
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+    }

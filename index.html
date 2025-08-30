@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Board Result Countdown</title>
+  <link rel="stylesheet" type="text/css" href="./style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="preloader-content">
+      <div class="preloader-text">BISMILLAH</div>
+      <div class="preloader-subtext">✨ Best of Luck - M.Abdullah K ✨</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1><i class="fas fa-hourglass-half"></i>Board Result Countdown</h1>
+
+    <div class="floating-text">
+      <i class="fas fa-bullhorn"></i>Result announced tomorrow at 10:00 AM
+    </div>
+
+    <div class="countdown">
+      <div class="time-box">
+        <span class="time" id="days">00</span>
+        <span class="label">Days</span>
+      </div>
+      <div class="time-box">
+        <span class="time" id="hours">00</span>
+        <span class="label">Hours</span>
+      </div>
+      <div class="time-box">
+        <span class="time" id="minutes">00</span>
+        <span class="label">Minutes</span>
+      </div>
+      <div class="time-box">
+        <span class="time" id="seconds">00</span>
+        <span class="label">Seconds</span>
+      </div>
+    </div>
+
+    <div class="progress-container">
+      <div class="progress-bar" id="progress"></div>
+    </div>
+
+    <div class="actions">
+      <button class="btn" id="shareBtn"><i class="fas fa-share-alt"></i>Share Countdown</button>
+      <button class="btn" id="resultsBtn"><i class="fas fa-bell"></i>Check Results</button>
+    </div>
+
+    <div class="footer">
+      <p>Good luck to all students waiting for their 9th class board results! 🎓</p>
+    </div>
+  </div>
+
+  <!-- Moving background text elements -->
+  <div class="moving-text" style="top: 15%; animation-duration: 40s;">RESULTS ARE COMING SOON</div>
+  <div class="moving-text" style="top: 35%; animation-duration: 35s; animation-delay: -20s;">GOOD LUCK EVERYONE</div>
+  <div class="moving-text" style="top: 55%; animation-duration: 45s; animation-delay: -10s;">ALMOST THERE</div>
+  <div class="moving-text" style="top: 75%; animation-duration: 50s; animation-delay: -30s;">STAY CALM AND CHECK LATER</div>
+  <div class="moving-text" style="top: 90%; animation-duration: 38s; animation-delay: -5s;">BEST OF LUCK</div>
+
+  <!-- Floating background elements -->
+  <div class="floating-element" style="width: 100px; height: 100px; top: 20%; left: 5%; animation-duration: 25s;"></div>
+  <div class="floating-element" style="width: 150px; height: 150px; top: 65%; right: 5%; animation-duration: 30s;"></div>
+  <div class="floating-element" style="width: 80px; height: 80px; bottom: 15%; left: 15%; animation-duration: 20s;"></div>
+  <div class="floating-element" style="width: 120px; height: 120px; top: 30%; right: 20%; animation-duration: 28s;"></div>
+<script src="./script.js"></script>
+</body>
+</html>
